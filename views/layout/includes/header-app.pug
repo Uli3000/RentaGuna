@@ -1,0 +1,35 @@
+header.bg-emerald-600.p-4
+    .container-mx-auto.flex.justify-between.items-center
+        a(href="/") 
+            h1.text-2xl.text-white.font-extrabold.text-center Renta
+                span.font-normal Guna
+        button 
+            img(src="/img/burgerIcon.png" alt="menu" class="w-[36px] md:hidden")
+
+        if token
+            nav(class="hidden my-5 text-sm font-bold text-white md:flex md:items-center md:gap-3")
+                a(href="/mis-propiedades" class="p-2 rounded-md hover:bg-emerald-900") Mis Propiedades
+
+                form(action="/auth/cerrar-sesion" method="POST")
+                    input(type="hidden" name="_csrf" value=csrfToken )
+                    input( type="submit" class="px-10 py-2 font-bold rounded-lg cursor-pointer bg-emerald-800 hover:bg-emerald-500" value="Cerrar Sesión")
+        else
+             nav(class="hidden my-5 text-sm font-bold text-white md:flex md:items-center md:gap-3")
+                a(href="/auth/registro" class="p-2 rounded-md hover:bg-emerald-900") Crear Cuenta
+                a(href="/auth/login" class="p-2 rounded-md hover:bg-emerald-900") Iniciar Sesion
+
+div(class="hidden py-5 bg-emerald-700 lg:block")
+    div(class="container flex justify-between mx-auto")
+        nav(class="flex items-center gap-6")
+            a(href="/categorias/1" class="text-sm font-bold text-white uppercase") Casas
+            a(href="/categorias/2" class="text-sm font-bold text-white uppercase") Departamentos
+            a(href="/categorias/3" class="text-sm font-bold text-white uppercase") Bodegas
+            a(href="/categorias/4" class="text-sm font-bold text-white uppercase") Quintas
+            a(href="/categorias/5" class="text-sm font-bold text-white uppercase") Cabañas
+        
+        form(action="/buscador" method="POST" class="flex items-center gap-3")
+            input(type="hidden" name='_csrf' value= csrfToken)
+            label(for="termino" class="text-sm font-bold text-white uppercase") Busqueda: 
+            input(type="text" id="termino" name="termino" placeholder="Buscar Rentas" class="p-2 text-sm rounded-lg shadow")
+
+            input(type="submit" class="p-2 text-sm font-bold text-white uppercase rounded-lg cursor-pointer bg-emerald-800 hover:bg-emerald-500" value="Buscar")  

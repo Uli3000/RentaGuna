@@ -1,0 +1,16 @@
+doctype html
+html(lang="es")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title RentaGuna | #{pagina}
+        block styles
+        link(rel="stylesheet", href="/css/app.css")
+        link(rel="icon" href="/img/rentaIcon.png" type="image/x-icon")
+    body.min-h-screen.bg-gray-50
+        include includes/header-app
+
+        main(class="container px-2 mx-auto mt-1")
+            block contenido
+
+        block scripts

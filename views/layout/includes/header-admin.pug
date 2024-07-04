@@ -1,0 +1,15 @@
+header.bg-emerald-600.p-4
+    .container.mx-auto.flex.justify-between.items-center
+        a(href="/") 
+            h1.text-2xl.text-white.font-extrabold.text-center Renta
+                span.font-normal Guna
+        
+        nav(class="hidden my-5 text-sm font-bold text-white md:flex md:items-center md:gap-3")
+            a(href="/" class="p-2 rounded-md hover:bg-emerald-900") Inicio
+            a(href="/mis-propiedades" class="p-2 rounded-md hover:bg-emerald-900") Mis Propiedades
+
+            form(action="/auth/cerrar-sesion" method="POST")
+                input(type="hidden" name="_csrf" value=csrfToken )
+                input( type="submit" class="px-10 py-2 font-bold rounded-lg cursor-pointer bg-emerald-800 hover:bg-emerald-500" value="Cerrar Sesión")
+
+    

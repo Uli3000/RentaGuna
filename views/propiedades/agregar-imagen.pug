@@ -1,0 +1,21 @@
+extends ../layout/admin
+
+block styles
+    link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.3/dropzone.css")
+    meta(name="csrf-token" content= csrfToken)
+
+block contenido
+    .py-10
+     h1.text-4xl.my-10.font-extrabold.text-center Renta
+        span.font-normal Guna
+     h2.text-center.text-2xl.font-extrabold= pagina
+
+     div(class="max-w-4xl px-4 py-8 mx-auto my-10 bg-white rounded shadow md:px-10")
+      form(id="imagen" class="flex-col items-center justify-center w-full h-auto border-2 border-dashed rounded dropzone min:h-96" method="POST" action=`/propiedades/agregar-imagen/${propiedad.id}`)
+         input(type="hidden" name="_csrf" value= csrfToken)
+
+      button(id="publicar" class="w-full py-3 mt-5 font-bold text-white uppercase rounded cursor-pointer bg-emerald-600 hover:bg-emerald-700" type="button")= "Publicar Propiedad"
+               
+
+block scripts 
+    script(src="/js/agregarImagen.js")
