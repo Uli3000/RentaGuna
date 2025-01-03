@@ -35,6 +35,14 @@ RentaGuna allows users to:
 - 📤 **Envío de correos electrónicos** para confirmaciones y notificaciones.
 - 🏗️ **Arquitectura MVC** para un código modular y limpio.
 
+### English
+- 🛠️ **Node.js & Express** for a robust backend.
+- 🖼️ **Dynamic views** with Pug.
+- 🎨 **TailwindCSS** for responsive and attractive styles.
+- 🔒 **Authentication with JWT** to secure routes.
+- 📤 **Email notifications** for confirmations and updates.
+- 🏗️ **MVC architecture** for modular and clean code.
+  
 ---
 
 ## 🌐 Demo en Vivo | Live Demo
